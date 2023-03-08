@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="latest">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="timetable">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="exam">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+    </style>
+
+    <style name="syllabus">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="events">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="toppers">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="fees">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="contact_us">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="vansh_goyal">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="co_founder_">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="department">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="bca">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+    <style name="graduated_i">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+    <style name="some_id">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    //custom card for event text
+
+    <style name="ShapeAppearance.Material3.MediumComponent.Cut" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+
+    </style>
+
+
+</resources>

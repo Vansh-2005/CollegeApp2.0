@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardData.Toppers.ToppersActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/topper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/toppers2" />
+
+            <TextView
+                android:layout_below="@id/topper"
+                android:id="@+id/Previos_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Previous year"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/msc_physics_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@id/Previos_text">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/msc_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/mscText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="M.Sc.(Physics)"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/mscImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/mscText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/msc_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mscImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/msc_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/msc_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/msc_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ma_sanskrit_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/msc_physics_layout"
+                android:layout_margin="20dp">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ma_sanskrit_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/maText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="M.A.(Sanskrit)"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/maImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/maText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/ma_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/maImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ma_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ma_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ma_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/msc_chemistry_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/ma_sanskrit_layout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/msc_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/msc_chem_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="M.Sc.(Chemistry)"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/msc_chem_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/msc_chem_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/msc_chem__topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/msc_chem_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/msc_chem_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/msc_chem__topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/msc_chem_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bedlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/msc_chemistry_layout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bed_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/bed_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="B.ED."
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/bed_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/bed_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/bed_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bed_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bed_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bed_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bed_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/balayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/bedlayout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ma_sanskrit_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/ba_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="B.A."
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/ba_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/ba_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/ba_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ba_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="Anjali Sharma"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ba_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ba_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="72.73%"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ba_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit5"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bsclayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/balayout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/msc_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/bsc_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="B.SC."
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/bsc_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/bsc_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/bsc_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bsc_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="Rashi Agrawal"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bsc_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bsc_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="80.7%"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bsc_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bcalayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/bsclayout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bca_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/bca_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="B.C.A."
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/bca_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/bca_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/bca_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bca_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="Vikas Gupta"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bca_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bca_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="79.03%"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bca_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bcomlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_below="@id/bcalayout">
+
+                <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="375dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bcom_bg">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/bcom_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:text="B.COM"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/bcom_Image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/bcom_Text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/topper_img_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/bcom_topper_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bcom_Image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="Surbhi Meena"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bcom_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bcom_topper_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="71.45%"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/merit8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bcom_percentage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:text="College Merit Position"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/merit8"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="FIRST"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

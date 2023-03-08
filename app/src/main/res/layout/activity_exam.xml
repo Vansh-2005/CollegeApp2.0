@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardData.Exam.ExamActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="Select Your Course"
+                android:textColor="#915f6d"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/examSpinner"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textspinner"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/spinner_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textspinner2"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/timeTableSpinner"-->
+            <!--                android:layout_marginStart="25dp"-->
+            <!--                android:layout_marginTop="25dp"-->
+            <!--                android:layout_marginEnd="25dp"-->
+            <!--                android:layout_marginBottom="25dp"-->
+            <!--                android:focusable="true"-->
+            <!--                android:focusableInTouchMode="true"-->
+            <!--                android:text="Select Your Class"-->
+            <!--                android:textColor="#915f6d"-->
+            <!--                android:textSize="15sp"-->
+            <!--                android:textStyle="bold" />-->
+
+            <!--            <Spinner-->
+            <!--                android:id="@+id/timeTableSpinner2"-->
+            <!--                android:layout_width="350dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/textspinner2"-->
+            <!--                android:layout_centerInParent="true"-->
+            <!--                android:layout_marginTop="2dp"-->
+            <!--                android:background="@drawable/spinner_bg"-->
+            <!--                android:focusable="true"-->
+            <!--                android:focusableInTouchMode="true" />-->
+
+            <Button
+                android:id="@+id/ttBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/examSpinner"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:background="@drawable/submit_btn_bg"
+                android:text="Submit" />
+
+            <ProgressBar
+                android:id="@+id/pd"
+                android:layout_below="@id/ttBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="200dp"/>
+
+            <com.jsibbold.zoomage.ZoomageView
+                android:id="@+id/examView"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_below="@id/ttBtn"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:scaleType="fitCenter" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -23,7 +23,8 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp"
-                app:cardBackgroundColor="#f5eee6">
+                app:cardBackgroundColor="#f5eee6"
+                android:id="@+id/vansh_layout">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/vansh"
@@ -107,13 +108,13 @@
                 android:layout_width="357dp"
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="700dp"
                 app:cardBackgroundColor="#f5eee6"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/varsha"
+                    android:id="@+id/kush"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
@@ -124,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="8dp"
-                    android:text="Varsha Rajput"
+                    android:text="Kush Bhardwaj"
                     android:textAppearance="@style/vansh_goyal" />
 
                 <TextView
@@ -281,6 +282,93 @@
                 android:layout_width="357dp"
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="200dp"
+                app:cardBackgroundColor="#f5eee6"
+                android:background="@drawable/developer_rectangle"
+                android:elevation="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/varsha"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_margin="5dp"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Varsha Rajput"
+                    android:textAppearance="@style/vansh_goyal" />
+
+                <TextView
+                    android:layout_width="93dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="55dp"
+                    android:text="Ui/Ux,\nDesigner"
+                    android:textAppearance="@style/co_founder_" />
+
+                <View
+                    android:layout_width="71dp"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/developer_line"
+                    android:rotation="90"
+                    android:rotationX="8" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="125dp"
+                    android:layout_marginTop="55dp"
+                    android:text="@string/department"
+                    android:textAppearance="@style/department" />
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="75dp"
+                    android:text="@string/bca"
+                    android:textAppearance="@style/bca"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="71dp"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="185dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/developer_line"
+                    android:rotation="90"
+                    android:rotationX="8" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="55dp"
+                    android:text="@string/graduated_i"
+                    android:textAppearance="@style/graduated_i" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="245dp"
+                    android:layout_marginTop="75dp"
+                    android:alpha="0.4"
+                    android:text="@string/some_id"
+                    android:textAppearance="@style/some_id" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="357dp"
+                android:layout_height="144.68dp"
+                android:layout_marginLeft="15dp"
                 app:cardBackgroundColor="#f5eee6"
                 android:layout_marginTop="540dp"
                 android:background="@drawable/developer_rectangle"
@@ -363,92 +451,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-
-                android:layout_width="357dp"
-                android:layout_height="144.68dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="700dp"
-                app:cardBackgroundColor="#f5eee6"
-                android:background="@drawable/developer_rectangle"
-                android:elevation="4dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/kush"
-                    android:layout_width="37dp"
-                    android:layout_height="37dp"
-                    android:layout_margin="5dp"
-                    android:elevation="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Kush Bhardwaj"
-                    android:textAppearance="@style/vansh_goyal" />
-
-                <TextView
-                    android:layout_width="93dp"
-                    android:layout_height="38dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:text="Ui/Ux,\nDesigner"
-                    android:textAppearance="@style/co_founder_" />
-
-                <View
-                    android:layout_width="71dp"
-                    android:layout_height="3dp"
-                    android:layout_marginLeft="72dp"
-                    android:layout_marginTop="80dp"
-                    android:background="@drawable/developer_line"
-                    android:rotation="90"
-                    android:rotationX="8" />
-
-                <TextView
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="125dp"
-                    android:layout_marginTop="55dp"
-                    android:text="@string/department"
-                    android:textAppearance="@style/department" />
-
-                <TextView
-                    android:layout_width="28dp"
-                    android:layout_height="16dp"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="75dp"
-                    android:text="@string/bca"
-                    android:textAppearance="@style/bca"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="71dp"
-                    android:layout_height="3dp"
-                    android:layout_marginLeft="185dp"
-                    android:layout_marginTop="80dp"
-                    android:background="@drawable/developer_line"
-                    android:rotation="90"
-                    android:rotationX="8" />
-
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="16dp"
-                    android:layout_marginLeft="240dp"
-                    android:layout_marginTop="55dp"
-                    android:text="@string/graduated_i"
-                    android:textAppearance="@style/graduated_i" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp"
-                    android:layout_marginLeft="245dp"
-                    android:layout_marginTop="75dp"
-                    android:alpha="0.4"
-                    android:text="@string/some_id"
-                    android:textAppearance="@style/some_id" />
-
-            </com.google.android.material.card.MaterialCardView>
 
         </RelativeLayout>
 

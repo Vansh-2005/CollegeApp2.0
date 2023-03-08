@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardData.Events.EventsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/event_bg"
+                android:layout_width="350dp"
+                android:layout_height="400dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#f5eee6"
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+                    android:id="@+id/event_image_view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/events_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="fitXY" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_bg"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.MediumComponent.Cut"
+                app:cardBackgroundColor="#f5eee6"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="2dp"
+                >
+                <TextView
+                    android:id="@+id/event_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="14sp"
+                    android:textColor="#6b645e"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/event_bg2"
+               android:layout_marginTop="550dp"
+                android:layout_width="350dp"
+                android:layout_height="400dp"
+                android:layout_centerHorizontal="true"
+                app:cardBackgroundColor="#f5eee6"
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+                    android:id="@+id/event_image_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/events_bg"
+                    android:clipToOutline="true"
+                    android:scaleType="fitXY" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_bg2"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.MediumComponent.Cut"
+                app:cardBackgroundColor="#f5eee6"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="12dp"
+                >
+                <TextView
+                    android:id="@+id/event_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="14sp"
+                    android:textColor="#6b645e"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

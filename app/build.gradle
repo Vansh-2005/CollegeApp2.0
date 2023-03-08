@@ -21,8 +21,8 @@ android {
         applicationId "com.dpbs.collegeapp"
         minSdkVersion 19
         targetSdkVersion 32
-        versionCode 103
-        versionName "1.0.3"
+        versionCode 104
+        versionName "1.0.4"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -53,7 +53,7 @@ android {
         }
         release {
             minifyEnabled false
-            debuggable true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.reunionRelease
         }
