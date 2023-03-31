@@ -66,7 +66,11 @@ public class PdfActivity extends AppCompatActivity {
                     list.add(data);
                 }
                 adapter = new PdfAdapter(PdfActivity.this,list);
-                pdfRecycler.setLayoutManager(new LinearLayoutManager(PdfActivity.this));
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+                pdfRecycler.setLayoutManager(layoutManager);
+                layoutManager.setReverseLayout(true);
+                layoutManager.setStackFromEnd(true);
+                pdfRecycler.setHasFixedSize(true);
                 pdfRecycler.setAdapter(adapter);
 
                 shimmerFrameLayout.stopShimmer();

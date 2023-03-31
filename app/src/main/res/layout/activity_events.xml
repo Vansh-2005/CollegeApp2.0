@@ -19,7 +19,6 @@
                 android:layout_width="350dp"
                 android:layout_height="400dp"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"
                 app:cardBackgroundColor="#f5eee6"
                 app:cardCornerRadius="15dp">
 
@@ -44,7 +43,7 @@
                 app:shapeAppearance="@style/ShapeAppearance.Material3.MediumComponent.Cut"
                 app:cardBackgroundColor="#f5eee6"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="2dp"
+                android:layout_margin="12dp"
                 >
                 <TextView
                     android:id="@+id/event_text1"

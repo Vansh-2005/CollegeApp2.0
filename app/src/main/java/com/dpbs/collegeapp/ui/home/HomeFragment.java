@@ -2,15 +2,26 @@ package com.dpbs.collegeapp.ui.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -23,6 +34,7 @@ import com.dpbs.collegeapp.CardData.Fees.FeesActivity;
 import com.dpbs.collegeapp.CardData.Syllabus.SyllabusActivity;
 import com.dpbs.collegeapp.CardData.TimeTable.TimeTableActivity;
 import com.dpbs.collegeapp.CardData.Toppers.ToppersActivity;
+import com.dpbs.collegeapp.CardData.Website.WebsiteActivity;
 import com.dpbs.collegeapp.R;
 import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -30,6 +42,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +53,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private ImageSlider mainslider;
     private DatabaseReference databaseReference;
     private TextView marquee;
+    private String url ="";
+    private String text;
 
     CardView timeTable, exam, syllabus, events, toppers, fees, contact, website;
     //private ImageView mapLocation;
@@ -70,13 +86,41 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         contact.setOnClickListener(this);
         website.setOnClickListener(this);
 
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.toolbar_background));
+        actionBar.setTitle("");
+
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Marquee");
-        databaseReference.child("News").addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String link = snapshot.getValue(String.class);
+                url = snapshot.child("Link").getValue(String.class);
+                text = snapshot.child("News").getValue(String.class);
+
+                ForegroundColorSpan foregroundSpan = new ForegroundColorSpan(Color.parseColor("#910000"));
+
+
+                SpannableString ss = new SpannableString(text);
+                ClickableSpan clickableSpan = new ClickableSpan() {
+                    @Override
+                    public void onClick(View textView) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(url));
+                        startActivity(intent);
+                    }
+                    @Override
+                    public void updateDrawState(TextPaint ds) {
+                        super.updateDrawState(ds);
+                        ds.setUnderlineText(true);
+                    }
+                };
+                ss.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                ss.setSpan(foregroundSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                marquee.setText(ss);
+                marquee.setMovementMethod(LinkMovementMethod.getInstance());
                 marquee.setSelected(true);
-                marquee.setText(link);
+                marquee.setHighlightColor(Color.TRANSPARENT);
             }
 
             @Override
@@ -84,6 +128,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             }
         });
+//        marquee.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(url));
+//                startActivity(intent);
+//            }
+//        });
+//
 
 
         //Getting the image slder
@@ -153,9 +206,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.website:
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://dpbspgcollege.edu.in/"));
+                intent = new Intent(getContext(), WebsiteActivity.class);
                 startActivity(intent);
+//                intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("http://dpbspgcollege.edu.in/"));
+//                startActivity(intent);
                 break;
         }
     }

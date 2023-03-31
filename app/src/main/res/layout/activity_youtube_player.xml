@@ -6,28 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.Videos.VideoActivity">
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/youtube_player_view"
+    <WebView
+        android:id="@+id/youtube"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:showFullScreenButton="true"
-        app:showVideoCurrentTime="true"
-        app:showSeekBar="true"
-        app:showVideoDuration="true"
-        app:autoPlay="false"
-        app:showYouTubeButton="false"/>
+        android:layout_height="match_parent"/>
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/youtube_player_view2"
-        android:layout_below="@id/youtube_player_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        app:autoPlay="false"
-        app:showFullScreenButton="true"
-        app:showSeekBar="true"
-        app:showVideoCurrentTime="true"
-        app:showVideoDuration="true"
-        app:showYouTubeButton="false" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/youtubeProgress"/>
 
 </RelativeLayout>

@@ -1,16 +1,24 @@
 package com.dpbs.collegeapp.CardData.Syllabus;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,6 +26,8 @@ import android.widget.Toast;
 
 import com.dpbs.collegeapp.CardData.Exam.ExamActivity;
 import com.dpbs.collegeapp.R;
+import com.dpbs.collegeapp.utility.AppConstants;
+import com.github.barteksc.pdfviewer.PDFView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,13 +35,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+
 public class SyllabusActivity extends AppCompatActivity {
-    private Spinner syllabusSpinner1;
-    private String selectedcourse;
-    private TextView courseerror;
-    private ImageView syllabusView;
-    private Button button;
-    private ProgressBar progressBar;
+
+
+    ListView syllabusList;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,136 +52,31 @@ public class SyllabusActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
-        syllabusSpinner1 = (Spinner) findViewById(R.id.syllabusSpinner);
-//        timeTableSpinner2 = (Spinner) findViewById(R.id.timeTableSpinner2);
-        syllabusView = (ImageView) findViewById(R.id.syllabusView);
-        button = findViewById(R.id.syllabusBtn);
-        courseerror = (TextView) findViewById(R.id.textspinner2);
-//        yearerror = (TextView)findViewById(R.id.textspinner2);
-        progressBar = findViewById(R.id.pd);
+        syllabusList = findViewById(R.id.syllabusList);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref3 = database.getReference().child("Syllabus");
+        String[] Courses = {"B.C.A","B.Com.","B.Ed.","Science Stream(B.Sc.,M.Sc.)","Arts Stream(B.A,M.A)"};
 
-        String courses[] = {"Select Course", "B.C.A", "B.Com.", "B.Ed.", "Science Stream(B.Sc,M.Sc.)", "Arts Stream(B.A,M.A)"};
-//        String year[] = {"Select year"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, courses);
-//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, year);
-        syllabusSpinner1.setAdapter(adapter1);
+        @SuppressLint("ResourceType") ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.syllabus_list_item,R.id.text,Courses){
 
-        syllabusSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @NonNull
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i1, long l) {
-                progressBar.setVisibility(View.GONE);
-                selectedcourse = syllabusSpinner1.getSelectedItem().toString();
-            }
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                Toast.makeText(SyllabusActivity.this, "Please Select your course", Toast.LENGTH_LONG).show();
+                View view = super.getView(position, convertView, parent);
+                TextView myText = (TextView) view.findViewById(android.R.id.text1);
+                return view;
 
             }
-        });
+        };
 
-
-        button.setOnClickListener(new View.OnClickListener() {
+        syllabusList.setAdapter(arrayAdapter);
+        syllabusList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                if (selectedcourse.equals("Select Course")) {
-                    Toast.makeText(SyllabusActivity.this, "Please select your course", Toast.LENGTH_LONG).show();
-                    courseerror.setError("Course is required");
-                    courseerror.requestFocus();
-                } else if (selectedcourse.equals("B.C.A")) {
-                    progressBar.setVisibility(View.VISIBLE);
-//                   yearerror.setError(null);
-                    courseerror.setError(null);
-                    ref3.child("BCA").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Picasso.get().load(value).into(syllabusView);
-                            progressBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            Toast.makeText(SyllabusActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else if (selectedcourse.equals("B.Com.")) {
-                    progressBar.setVisibility(View.VISIBLE);
-//                   yearerror.setError(null);
-                    courseerror.setError(null);
-                    ref3.child("BCOM").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Picasso.get().load(value).into(syllabusView);
-                            progressBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            Toast.makeText(SyllabusActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else if (selectedcourse.equals("B.Ed.")) {
-                    progressBar.setVisibility(View.VISIBLE);
-//                   yearerror.setError(null);
-                    courseerror.setError(null);
-                    ref3.child("BEd").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Picasso.get().load(value).into(syllabusView);
-                            progressBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            Toast.makeText(SyllabusActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else if (selectedcourse.equals("Science Stream(B.Sc,M.Sc.)")) {
-                    progressBar.setVisibility(View.VISIBLE);
-//                   yearerror.setError(null);
-                    courseerror.setError(null);
-                    ref3.child("Science Stream").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Picasso.get().load(value).into(syllabusView);
-                            progressBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            Toast.makeText(SyllabusActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else if (selectedcourse.equals("Arts Stream(B.A,M.A)")) {
-                    progressBar.setVisibility(View.VISIBLE);
-//                   yearerror.setError(null);
-                    courseerror.setError(null);
-                    ref3.child("Arts Stream").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String value = snapshot.getValue(String.class);
-                            Picasso.get().load(value).into(syllabusView);
-                            progressBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            Toast.makeText(SyllabusActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = arrayAdapter.getItem(i);
+                Intent intent = new Intent(SyllabusActivity.this,SyllabusViewactivity.class);
+                intent.putExtra(AppConstants.SYLLABUS_PDF,item);
+                startActivity(intent);
             }
         });
 

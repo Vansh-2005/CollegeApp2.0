@@ -22,8 +22,11 @@ The Behavioural discipline, moral integrity and cognitive development of our stu
 
 wish you all the very best..........</string>
 
+    <string name="hyperlink_text"><a href="%1$s">%2$s</a></string>
+
+
     <string name="latest">Latest</string>
-    <string name="dpbs_offici">DPBS official app will be launched soon...</string>
+    <string name="dpbs_offici"><u>Loading...</u></string>
     <string name="timetable">TIMETABLE</string>
     <string name="exam">EXAM</string>
     <string name="syllabus">SYLLABUS</string>
@@ -31,7 +34,7 @@ wish you all the very best..........</string>
     <string name="toppers">TOPPERS</string>
     <string name="fees">FEES</string>
     <string name="contact">CONTACT US</string>
-    <string name="website">VISIT WEBSITE</string>
+    <string name="website">VIEW WEBSITE</string>
     <string name="vansh_goyal">Vansh Goyal</string>
     <string name="co_founder_">Co-founder,\nDeveloper</string>
     <string name="department">Department</string>

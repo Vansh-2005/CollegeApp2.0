@@ -27,8 +27,8 @@ public class AboutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_about,container,false);
         list = new ArrayList<>();
         list.add(new BranchModel(R.drawable.ic_computer,"Computer Science","The BCA Degree courses at Durga Prasad Baljeet Singh College,are focused on training the students in programming, networking, developing, etc. "));
-        list.add(new BranchModel(R.drawable.ic_bsc,"B.S.C","feffwfwfefefefefefefef"));
-        list.add(new BranchModel(R.drawable.ic_bcom,"B.com","feffwfwfefefefefefefef"));
+        list.add(new BranchModel(R.drawable.ic_bsc,"B.S.C","Durga Prasad Baljeet Singh PG College offers a Bachelor of Science (BSc) degree program, providing students with in-depth knowledge and skills in various scientific disciplines."));
+        list.add(new BranchModel(R.drawable.ic_bcom,"B.com","Durga Prasad Baljeet Singh PG College offers a comprehensive BCom degree program that equips students with a strong foundation in business and commerce for a successful career."));
 
         adapter = new BranchAdapter(getContext(),list);
         viewPager = view.findViewById(R.id.viewPager);

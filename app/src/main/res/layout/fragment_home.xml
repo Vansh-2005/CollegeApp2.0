@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,8 +62,8 @@
             android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             android:focusable="true"
+            android:clickable="true"
             android:focusableInTouchMode="true"
-            android:freezesText="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
@@ -70,253 +71,280 @@
             android:textColor="#910000"
             android:textSize="14sp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/timeTable"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/ic_timetable" />
-
-                <TextView
-                    android:id="@+id/timeTableText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="9dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center"
-                    android:text="@string/timetable"
-                    android:textAppearance="@style/timetable" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/exam"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
+                android:layout_marginTop="30dp">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/exam" />
 
-                <TextView
-                    android:id="@+id/examText"
-                    android:layout_width="66dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center"
-                    android:text="@string/exam"
-                    android:textAppearance="@style/exam" />
-            </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/syllabus"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/exam"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="7dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/syllabus"
-                android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/syllabus" />
+
+                    <TextView
+                        android:id="@+id/syllabusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="49dp"
+                        android:gravity="center"
+                        android:text="@string/syllabus"
+                        android:textAppearance="@style/syllabus" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/exam"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toStartOf="@+id/syllabus"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/timeTable"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="7dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/exam" />
+
+                    <TextView
+                        android:id="@+id/examText"
+                        android:layout_width="66dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="49dp"
+                        android:gravity="center"
+                        android:text="@string/exam"
+                        android:textAppearance="@style/exam" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/timeTable"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toStartOf="@+id/exam"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="7dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_timetable" />
+
+                    <TextView
+                        android:id="@+id/timeTableText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="53dp"
+                        android:gravity="center"
+                        android:text="@string/timetable"
+                        android:textAppearance="@style/timetable" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout12"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
+                android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/syllabus" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/events"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toStartOf="@+id/toppers"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent">
 
-                <TextView
-                    android:id="@+id/syllabusText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="26dp"
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-8dp"
+                        android:padding="15dp"
+                        android:src="@drawable/event" />
+
+                    <TextView
+                        android:id="@+id/eventsText"
+                        android:layout_width="66dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="48dp"
+                        android:gravity="center"
+                        android:text="@string/events"
+                        android:textAppearance="@style/timetable" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fees"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/toppers"
+                    tools:layout_editor_absoluteY="-7dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/fees" />
+
+                    <TextView
+                        android:id="@+id/feesText"
+                        android:layout_width="66dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="49dp"
+                        android:gravity="center"
+                        android:text="@string/fees"
+                        android:textAppearance="@style/exam" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toppers"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginLeft="9dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center"
-                    android:text="@string/syllabus"
-                    android:textAppearance="@style/syllabus" />
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/events"
-                android:layout_width="wrap_content"
+                    android:background="@drawable/time_table_layout"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintEnd_toStartOf="@+id/fees"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/events"
+                    tools:layout_editor_absoluteY="-3dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/toppers" />
+
+                    <TextView
+                        android:id="@+id/topperText"
+                        android:layout_width="66dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="48dp"
+                        android:gravity="center"
+                        android:text="@string/toppers"
+                        android:textAppearance="@style/exam" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout14"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
+                android:layout_marginTop="20dp"
+               >
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/event" />
-
-                <TextView
-                    android:id="@+id/eventsText"
-                    android:layout_width="66dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="9dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center"
-                    android:text="@string/events"
-                    android:textAppearance="@style/timetable" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/toppers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/toppers" />
-
-                <TextView
-                    android:id="@+id/topperText"
-                    android:layout_width="66dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="9dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center"
-                    android:text="@string/toppers"
-                    android:textAppearance="@style/exam" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/fees"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="34dp"
-                android:background="@drawable/time_table_layout"
-                app:cardBackgroundColor="#866ec7">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-10dp"
-                    android:padding="15dp"
-                    android:src="@drawable/fees" />
-
-                <TextView
-                    android:id="@+id/feesText"
-                    android:layout_width="66dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="47dp"
-                    android:gravity="center"
-                    android:text="@string/fees"
-                    android:textAppearance="@style/exam" />
-            </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/contact"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="58dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/contact_vector"
-                app:cardBackgroundColor="#866ec7">
-
-                <TextView
-                    android:id="@+id/TextContact"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/contact"
                     android:layout_width="300dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/contact"
-                    android:textAppearance="@style/contact_us" />
+                    android:layout_height="40dp"
+                    android:background="@drawable/contact_vector"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                    <TextView
+                        android:id="@+id/TextContact"
+                        android:layout_width="300dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/contact"
+                        android:textAppearance="@style/contact_us" />
 
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/website"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="58dp"
-                android:layout_marginTop="33dp"
-                android:background="@drawable/contact_vector"
-                app:cardBackgroundColor="#866ec7">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/TextWebsite"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+               >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/website"
                     android:layout_width="300dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/website"
-                    android:textAppearance="@style/contact_us" />
+                    android:layout_height="40dp"
+                    android:background="@drawable/contact_vector"
+                    app:cardBackgroundColor="#866ec7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                    <TextView
+                        android:id="@+id/TextWebsite"
+                        android:layout_width="300dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/website"
+                        android:textAppearance="@style/contact_us" />
 
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
         </LinearLayout>
