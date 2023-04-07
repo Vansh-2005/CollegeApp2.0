@@ -54,7 +54,7 @@ public class SyllabusActivity extends AppCompatActivity {
 
         syllabusList = findViewById(R.id.syllabusList);
 
-        String[] Courses = {"B.C.A","B.Com.","B.Ed.","Science Stream(B.Sc.,M.Sc.)","Arts Stream(B.A,M.A)"};
+        String[] Courses = {"Arts Stream(B.A,M.A)","B.C.A","B.Com.","B.Ed.","Science Stream(B.Sc.,M.Sc.)"};
 
         @SuppressLint("ResourceType") ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.syllabus_list_item,R.id.text,Courses){
 

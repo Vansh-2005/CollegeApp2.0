@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CollegeApp2">
         <activity
             android:name=".CardData.Syllabus.SyllabusViewactivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".CardData.Syllabus.SyllabusActivity"
             android:exported="false" />
         <activity
             android:name=".CardData.Website.WebsiteActivity"

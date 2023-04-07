@@ -9,8 +9,11 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/syllabusList"
+                android:clipToOutline="true"
+                android:elevation="4dp"
+                android:background="@drawable/listview_background"
                 android:padding="10dp">
 
 
