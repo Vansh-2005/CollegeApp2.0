@@ -91,43 +91,43 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         actionBar.setTitle("");
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Marquee");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                url = snapshot.child("Link").getValue(String.class);
-                text = snapshot.child("News").getValue(String.class);
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    url = snapshot.child("Link").getValue(String.class);
+                    text = snapshot.child("News").getValue(String.class);
 
-                ForegroundColorSpan foregroundSpan = new ForegroundColorSpan(Color.parseColor("#910000"));
+                    ForegroundColorSpan foregroundSpan = new ForegroundColorSpan(Color.parseColor("#910000"));
 
 
-                SpannableString ss = new SpannableString(text);
-                ClickableSpan clickableSpan = new ClickableSpan() {
-                    @Override
-                    public void onClick(View textView) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setData(Uri.parse(url));
-                        startActivity(intent);
-                    }
-                    @Override
-                    public void updateDrawState(TextPaint ds) {
-                        super.updateDrawState(ds);
-                        ds.setUnderlineText(true);
-                    }
-                };
-                ss.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ss.setSpan(foregroundSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    SpannableString ss = new SpannableString(text);
+                    ClickableSpan clickableSpan = new ClickableSpan() {
+                        @Override
+                        public void onClick(View textView) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse(url));
+                            startActivity(intent);
+                        }
+                        @Override
+                        public void updateDrawState(TextPaint ds) {
+                            super.updateDrawState(ds);
+                            ds.setUnderlineText(true);
+                        }
+                    };
+                    ss.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    ss.setSpan(foregroundSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-                marquee.setText(ss);
-                marquee.setMovementMethod(LinkMovementMethod.getInstance());
-                marquee.setSelected(true);
-                marquee.setHighlightColor(Color.TRANSPARENT);
-            }
+                    marquee.setText(ss);
+                    marquee.setMovementMethod(LinkMovementMethod.getInstance());
+                    marquee.setSelected(true);
+                    marquee.setHighlightColor(Color.TRANSPARENT);
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
 //        marquee.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
